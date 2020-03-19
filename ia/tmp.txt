@@ -1,0 +1,28 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc55
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-ml -- Large model
+#
+CFLAGS=-N -v -w -ml
+SRC=ia.cpp hist.cpp
+OBJ=ia.obj hist.obj
+
+all: hist.exe
+	
+hist.exe: $(OBJ)
+	$(CC) $(CFLAGS) -ehist $(OBJ)
+
+hist.obj: ia.h hist.cpp
+	$(CC) $(CFLAGS) -c hist.cpp
+
+ia.obj: ia.h ia.cpp
+	$(CC) $(CFLAGS) -c ia.cpp
+
+clean:
+	erase hist.exe io.obj hist.obj

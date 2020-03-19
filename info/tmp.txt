@@ -1,0 +1,2 @@
+info.cpp: In function `int main()':
+info.cpp:13: warning: comparison is always 0 due to width of bitfield

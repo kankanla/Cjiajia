@@ -1,0 +1,59 @@
+/********************************************************
+ * istream >> complex -- read a complex number		*
+ *							*
+ * Parameters						*
+ *	in_file -- file to read				*
+ *	number -- place to put the number		*
+ *							*
+ * Returns						*
+ *	reference to the input file			*
+ ********************************************************/
+istream &operator >> (istream &in_file, complex &number)
+{
+    double real, imaginary;  // Real and imaginary part.
+    char ch;		// Random character used to verify input
+
+    number.set(0.0, 0.0);	// Initialize the number (just in case)
+
+    istream::sentry the_sentry(in_file, true);	// Sentry to protect the I/O
+
+    if (the_sentry)
+    {
+	if (in_file.bad()) return (in_file);	
+
+	in_file >> ch;	// Get character after whitespace
+	if (ch != '(') {
+	    in_file.setstate(ios::failbit);	// We have an error
+	    return (in_file);
+	}
+
+	in_file >> real;
+
+	if (in_file.bad()) return (in_file);
+
+	in_file >> ws >> ch;	// Get first character after number
+
+	if (in_file.bad()) return (in_file);
+
+	if (ch != ',') {
+	   in_file.setstate(ios::failbit);
+	   return (in_file);
+	}
+
+	in_file >> imaginary;
+
+	in_file >> ws >> ch;
+	if (in_file.bad()) return (in_file);
+
+	if (ch != ')') {
+	   in_file.setstate(ios::failbit);
+	   return (in_file);
+	}
+	number.set(real, imaginary);
+    }
+    else
+    {
+       in_file.setstate(ios::failbit);
+    }
+   return (in_file);
+}
