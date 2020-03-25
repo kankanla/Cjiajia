@@ -1,5 +1,11 @@
 #include <iostream>
 
+/*
+	while
+	if
+	std::cin
+*/
+
 int result;
 char oper_char;
 int value;
