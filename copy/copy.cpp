@@ -12,7 +12,7 @@ int main()
     int ch;          // character or EOF flag from input 
 
     in_file = std::fopen(FILE_NAME, "rb");
-    if (in_file == NULL) {
+    if (in_file == NULL) {std::fclose(in_file);
 	std::cerr << "Can not open " << FILE_NAME << '\n';
         exit(8);
     }
