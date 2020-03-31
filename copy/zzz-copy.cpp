@@ -13,6 +13,7 @@ const char FILE_NAME[] = "input.txt";
 	std::FILE *in_file;
 	in_file = std::fopen(FILE_NAME, "rb");
 	std::fclose(in_file);
+	https://ja.cppreference.com/w/cpp/io/c
 	正常終了 exit(0); main 関数から Exit
 	異常終了 exit(1); main 関数から Exit
 */
@@ -31,8 +32,7 @@ int main(int argc, char const *argv[])
 
 	while (true) {
 		ch = std::fgetc(in_file);
-		if (ch == EOF)
-			break;
+		if (ch == EOF) break;
 		std::cout << ch << std::endl;
 		++count;
 	}
