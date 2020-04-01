@@ -2,34 +2,41 @@
 
 class simple {
 public:
-	float do_it2(float f) {
-		return (f * 2);
+	int do_it(int i) {
+		return i++;
 	}
-
-	int do_it(int j, int i) {
-		return (j + i);
+	float do_it(float f) {
+		std::cout << "simple float " << (f / 2) << '\n';
+		return (f / 2);
 	}
 };
 
 class derived: public simple {
 public:
-	float do_it2(float f) {
-		return (f * 3);
+	int do_int(int i, int j) {
+		return i + j;
 	}
 };
 
 int main(int argc, char const *argv[])
 {
 
-	derived var;
-	float f;
-	int i;
+	//非継承
+	simple var;
+	int a;
+	float b;
+	a = var.do_it(5);
+	b = var.do_it(6.3f);
+	std::cout << "a " << a << '\n';
+	std::cout << "b " << b << '\n';
 
-	f = var.do_it2(3.2f);
-	i = var.do_it(1, 2);
-	std::cout << f << "ff\n";
-	std::cout << i << "ff\n";
+	//継承
+	derived var2;
+	int c;
+	float d;
 
-	/* code */
+	c = var2.do_int(2, 4);
+	// d = var2.do_int(9.3f);	//Fails;
 	return 0;
 }
+
