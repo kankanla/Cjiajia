@@ -4,8 +4,15 @@ float data[5];
 float total;
 float average;
 
+/*
+	20203433
+*/
+
 int main(int argc, char const *argv[])
 {
+
+	std::cout << data << '\n' << total << '\n' << average << '\n' << std::endl;
+
 	data[0] = 34.0;
 	data[1] = 27.0;
 	data[2] = 46.5;
