@@ -1,0 +1,1 @@
+bound_c1: bound_c1.cpp:11: int main(): Assertion `index < 7' failed.
