@@ -4,9 +4,9 @@
 //の終了が必要です。
 
 
-int  height;   /* the height of the triangle
-int  width;    /* the width of the triangle */
-int  area;     /* area of the triangle (computed) */
+int  height;    // the height of the triangle
+int  width;    // the width of the triangle 
+int  area;     // area of the triangle (computed)
 
 int main()
 {

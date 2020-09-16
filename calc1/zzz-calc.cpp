@@ -1,23 +1,23 @@
 #include <iostream>
 
-int r;
-char o;
-int v;
-
-/*
-	o = '+' ではなく o == '+' です。
-*/
-
+int result;
+char oper_char;
+int value;
 
 int main(int argc, char const *argv[])
 {
-	r = 0;
-	while (1) {
-		if (o == '+') {
+	while(true){
+		std::cout << "Result:" << result << '\n';
+		std::cout << "Enter operatior and number";
+		std::cin >> oper_char >> value;
 
-		} else {
-
+		if('+' == oper_char){
+			result += value;
+		}else{
+			std::cout << "Unknown operation "  << oper_char << '\n';
 		}
 	}
 	return 0;
 }
+
+
