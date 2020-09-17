@@ -1,0 +1,28 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: value.exe ref.exe big.obj
+
+big.obj: big.cpp
+	$(CC) $(CFLAGS) -c big.cpp
+
+value.exe: value.cpp
+	$(CC) $(CFLAGS)  value.cpp
+
+ref.exe: ref.cpp
+	$(CC) $(CFLAGS)  ref.cpp
+
+clean:
+	erase big.obj value.exe ref.exe
+	
