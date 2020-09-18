@@ -1,9 +1,9 @@
 #include <iostream>
 
 /*
-	while
-	if
-	std::cin
+    while
+    if
+    std::cin
 */
 
 int result;
@@ -12,32 +12,32 @@ int value;
 
 int main(int argc, char const *argv[])
 {
-	result = 0;
-	while (true) {
-		std::cout << "Result: " << result << '\n';
-		std::cout << "Enter operatior and number: ";
+    result = 0;
+    while (true) {
+        std::cout << "Result: " << result << '\n';
+        std::cout << "Enter operatior and number: ";
 
-		std::cin >> oper_char >> value;
+        std::cin >> oper_char >> value;
 
-		if ((oper_char == 'q' || (oper_char == 'Q')))
-			break;
-		if (oper_char == '+') {
-			result += value;
-		} else if (oper_char == '-') {
-			result -= value;
-		} else if (oper_char == '/') {
-			if (value == 0) {
-				std::cout << "Error:Divide by zero\n";
-				std::cout << "  operation ignored\n";
+        if ((oper_char == 'q' || (oper_char == 'Q')))
+            break;
+        if (oper_char == '+') {
+            result += value;
+        } else if (oper_char == '-') {
+            result -= value;
+        } else if (oper_char == '/') {
+            if (value == 0) {
+                std::cout << "Error:Divide by zero\n";
+                std::cout << "  operation ignored\n";
 
-			} else
-				result /= value;
-		} else {
-			std::cout << "Unknown operation " << oper_char << '\n';
-		}
+            } else
+                result /= value;
+        } else {
+            std::cout << "Unknown operation " << oper_char << '\n';
+        }
 
 
-	}
-	return 0;
+    }
+    return 0;
 }
 
