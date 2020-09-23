@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: print.exe
+
+print.exe: print.cpp
+	$(CC) $(CFLAGS)  print.cpp
+
+clean:
+	erase print.exe

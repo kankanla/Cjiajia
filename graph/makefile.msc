@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: graph.exe
+
+graph.exe: graph.cpp
+	$(CC) $(CFLAGS)  graph.cpp
+
+clean:
+	erase graph.exe

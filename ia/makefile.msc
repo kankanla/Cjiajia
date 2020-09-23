@@ -1,0 +1,30 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+SRC=hist.cpp ia.cpp
+OBJ=hist.obj ia.obj
+
+all: hist.exe
+	
+hist.exe: $(OBJ)
+	$(CC) $(CFLAGS)  $(OBJ)
+
+hist.obj: ia.h hist.cpp
+	$(CC) $(CFLAGS) -c hist.cpp
+
+ia.obj: ia.h ia.cpp
+	$(CC) $(CFLAGS) -c ia.cpp
+
+clean:
+	erase hist.exe io.obj hist.obj

@@ -1,0 +1,17 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+virt.exe: virt.cpp
+	$(CC) $(CFLAGS) -evirt virt.cpp
+
+clean:
+	erase virt.exe

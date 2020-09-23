@@ -1,0 +1,19 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: thing.exe
+
+thing.exe: thing.cpp
+	$(CC) $(CFLAGS) -ething thing.cpp
+
+clean:
+	erase thing.exe

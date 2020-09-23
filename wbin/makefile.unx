@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: wbin
+
+wbin: wbin.cpp
+	$(CC) $(CFLAGS) -o wbin wbin.cpp
+
+clean:
+	rm wbin

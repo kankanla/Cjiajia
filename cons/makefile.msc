@@ -1,0 +1,20 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+class.obj: class.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c class.cpp
+
+clean:
+	erase class.obj

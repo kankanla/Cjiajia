@@ -1,0 +1,27 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: flush.exe cstop.obj flush2.exe
+
+flush.exe: flush.cpp
+	$(CC) $(CFLAGS) -eflush flush.cpp
+
+flush2.exe: flush2.cpp
+	@echo "Generates warning"
+	$(CC) $(CFLAGS) -eflush2 flush2.cpp
+
+cstop.obj: cstop.cpp
+	@echo "Generates object file only"
+	$(CC) $(CFLAGS) -c cstop.cpp
+
+clean:
+	erase flush.exe cstop.obj flush2.exe

@@ -1,0 +1,20 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: flush cstop.o flush2
+
+flush: flush.cpp
+	$(CC) $(CFLAGS) -o flush flush.cpp
+
+flush2: flush2.cpp
+	$(CC) $(CFLAGS) -o flush2 flush2.cpp
+
+cstop.o: cstop.cpp
+	@echo "Generates object file only"
+	$(CC) $(CFLAGS) -c cstop.cpp
+
+clean: 
+	rm flush cstop.o flush2

@@ -1,0 +1,26 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+
+bound_err.exe: bound_err.cpp
+	$(CC) $(CFLAGS)  bound_err.cpp
+
+bound_c1.exe: bound_c1.cpp
+	$(CC) $(CFLAGS)  bound_c1.cpp
+
+bound_c2.exe: bound_c2.cpp
+	$(CC) $(CFLAGS)  bound_c2.cpp
+
+clean:
+	erase bound_err.exe bound_c1.exe bound_c2.exe

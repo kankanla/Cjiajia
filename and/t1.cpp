@@ -17,7 +17,7 @@ int main()
   std::normal_distribution<> dist2(1.0, 0.5);
 
   std::ofstream file("random.tsv");
-  for (size_t i = 0; i < 1000*1000; ++i) {
+  for (size_t i = 0; i < 1000 * 1000; ++i) {
     // 各分布法に基いて乱数を生成
     double r1 = dist1(engine);
     double r2 = dist2(engine);

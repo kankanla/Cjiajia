@@ -1,0 +1,22 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: max.exe
+
+max.exe: max.cpp
+	@echo "This compile generates a warning"
+	$(CC) $(CFLAGS)  max.cpp
+
+clean:
+	erase max.exe

@@ -1,0 +1,18 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+doit_t.exe: doit_t.cpp
+	@echo "This compile generates an error"
+	-$(CC) $(CFLAGS) -edoit_t doit_t.cpp
+
+clean:
+	erase doit_t.exe

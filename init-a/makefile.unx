@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: init-a
+
+init-a: init-a.cpp
+	$(CC) $(CFLAGS) -o init-a init-a.cpp
+
+clean:
+	rm init-a

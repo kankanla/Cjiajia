@@ -1,0 +1,12 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+doit_t: doit_t.cpp
+	@echo "This compile generates an error"
+	-$(CC) $(CFLAGS) -o doit_t doit_t.cpp
+
+clean:
+	rm doit_t

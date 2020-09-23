@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+virt: virt.cpp
+	$(CC) $(CFLAGS) -o virt virt.cpp
+
+clean:
+	rm virt

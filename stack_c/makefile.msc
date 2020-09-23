@@ -1,0 +1,29 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: stack_c.exe stack_d1.obj stackex1.exe
+
+stack_d1.obj: stack_d1.cpp
+	$(CC) $(CFLAGS) -c stack_d1.cpp
+
+stackex1.exe: stackex1.cpp
+	@echo "Warning: Some compilers doesn't handle exceptions yet"
+	@echo "  So this program may not compile"
+	-$(CC) $(CFLAGS)  stackex1.cpp
+
+stack_c.exe: stack_c.cpp
+	$(CC) $(CFLAGS)  stack_c.cpp
+
+clean:
+	erase stack_c.exe stack_d1.obj stackex1.exe

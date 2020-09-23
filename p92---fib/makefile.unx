@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: fib
+
+fib: fib.cpp
+	$(CC) $(CFLAGS) -o fib fib.cpp
+
+clean:
+	rm fib

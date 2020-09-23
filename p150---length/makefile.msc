@@ -1,0 +1,27 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: length.obj rlen.obj
+
+length.obj: length.cpp
+	@echo "Warning, this generates an object file only"
+	@echo "This compile generates a warning message"
+	$(CC) -c $(CFLAGS) length.cpp
+
+rlen.obj: rlen.cpp
+	@echo "Warning, this generates an object file only"
+	$(CC) -c $(CFLAGS) rlen.cpp
+
+clean:
+	erase length.obj rlen.obj

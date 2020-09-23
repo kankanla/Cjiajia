@@ -1,0 +1,18 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+
+bound_err: bound_err.cpp
+	$(CC) $(CFLAGS) -o bound_err bound_err.cpp
+
+bound_c1: bound_c1.cpp
+	$(CC) $(CFLAGS) -o bound_c1 bound_c1.cpp
+
+bound_c2: bound_c2.cpp
+	$(CC) $(CFLAGS) -o bound_c2 bound_c2.cpp
+
+clean:
+	rm bound_err bound_c1 bound_c2

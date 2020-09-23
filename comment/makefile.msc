@@ -1,0 +1,22 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: comment.exe
+
+comment.exe: comment.cpp
+	@echo "This program will not compile due to an error"
+	-$(CC) $(CFLAGS)  comment.cpp
+
+clean:
+	erase comment.exe

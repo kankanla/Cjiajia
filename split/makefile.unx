@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: split
+
+split: split.cpp
+	$(CC) $(CFLAGS) -o split split.cpp
+
+clean:
+	rm split

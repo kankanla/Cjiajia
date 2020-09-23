@@ -1,0 +1,20 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: exp.exe
+
+exp.exe: exp.cpp
+	@echo "Expect a null effect warning"
+	$(CC) $(CFLAGS) -eexp exp.cpp
+
+clean:
+	erase exp.exe

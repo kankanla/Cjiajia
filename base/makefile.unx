@@ -1,0 +1,21 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: base base2.o base3.o
+
+base: base.cpp
+	$(CC) $(CFLAGS) -o base base.cpp
+
+base2.o: base2.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c base2.cpp
+
+base3.o: base3.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c base3.cpp
+
+clean:
+	rm base base2.o base3.o

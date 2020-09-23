@@ -1,0 +1,24 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: fixed_test
+
+fixed_test: fixed_pt.obj fixed_test.obj
+
+fixed_test.obj: fixed_test.cpp fixed_pt.h
+	$(CC) $(CFLAGS) -c fixed_test.cpp
+
+fixed_pt.obj: fixed_pt.cpp fixed_pt.h
+	$(CC) $(CFLAGS) -c fixed_pt.cpp
+
+clean:
+	erase *.obj fixed_test

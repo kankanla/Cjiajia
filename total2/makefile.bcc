@@ -1,0 +1,19 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: total2.exe
+
+total2.exe: total2.cpp
+	$(CC) $(CFLAGS) -etotal2 total2.cpp
+
+clean:
+	erase total2.exe

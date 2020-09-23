@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: float2
+
+float2: float2.cpp
+	$(CC) $(CFLAGS) -o float2 float2.cpp
+
+clean:
+	rm float2

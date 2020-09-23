@@ -1,0 +1,12 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+class.o: class.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c class.cpp
+
+clean:
+	rm class.o

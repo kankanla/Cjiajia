@@ -1,14 +1,10 @@
 #include <iostream>
 
-signed char ch;
+signed char ch;	// Very short integer 
+		// Range is -128 to 127
 
-int main(int argc, char const *argv[])
+int main()
 {
-	ch = 37;
-	for (int i = 0 ; i < 10 ; ++i) {
-		std::cout << "The number is " << static_cast<int>(ch) << "\n";
-		std::cout << "The number is " << (ch) << "\n";
-		++ch;
-	}
-	return 0;
+    std::cout << "The number is " << static_cast<int>(ch) << '\n';	
+    return (0);
 }

@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+equal: equal.cpp
+	$(CC) $(CFLAGS) -o equal equal.cpp
+
+clean:
+	rm equal

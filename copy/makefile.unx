@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: copy
+
+copy: copy.cpp
+	$(CC) $(CFLAGS) -o copy copy.cpp
+
+clean:
+	rm copy

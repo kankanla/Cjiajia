@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: find.o
+
+find.o: find.cpp
+	$(CC) -c $(CFLAGS) find.cpp
+
+clean:
+	rm find.o

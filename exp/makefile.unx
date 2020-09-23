@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: exp
+
+exp: exp.cpp
+	@echo "Expect a null effect warning"
+	$(CC) $(CFLAGS) -o exp exp.cpp
+
+clean:
+	rm exp

@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: print
+
+print: print.cpp
+	$(CC) $(CFLAGS) -o print print.cpp
+
+clean:
+	rm print

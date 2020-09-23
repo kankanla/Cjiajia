@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: ptr2 ptr2a
+
+ptr2a: ptr2a.cpp
+	$(CC) $(CFLAGS) -o ptr2a ptr2a.cpp
+
+ptr2: ptr2.cpp
+	$(CC) $(CFLAGS) -o ptr2 ptr2.cpp
+
+clean:
+	rm ptr2 ptr2a

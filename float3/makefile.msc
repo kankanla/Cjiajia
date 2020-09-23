@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+C_COMPILE=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+float3.exe: float3.cpp
+	$(C_COMPILE) $(CFLAGS)  float3.cpp
+
+clean:
+	erase float3.exe

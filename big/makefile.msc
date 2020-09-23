@@ -1,0 +1,22 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: big.exe
+
+big.exe: big.cpp
+	@echo The following compile generates a syntax error
+	$(CC) $(CFLAGS)  big.cpp
+
+clean:
+	erase big.exe

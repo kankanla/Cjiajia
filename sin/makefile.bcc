@@ -1,0 +1,17 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+sine.exe: sine.cpp
+	$(CC) $(CFLAGS) -esine sine.cpp 
+
+clean:
+	erase sine.exe

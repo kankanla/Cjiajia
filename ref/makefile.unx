@@ -1,0 +1,12 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+ref: ref.cpp
+	@echo "This compile will generate a warning"
+	$(CC) $(CFLAGS) -o ref ref.cpp
+
+clean:
+	rm ref

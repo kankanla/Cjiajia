@@ -1,0 +1,19 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: perm.exe
+
+perm.exe: perm.cpp
+	$(CC) $(CFLAGS) -eperm perm.cpp
+
+clean:
+	erase perm.exe

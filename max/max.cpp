@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-int MAX =10;
+#define MAX =10
 
 int main()
 {

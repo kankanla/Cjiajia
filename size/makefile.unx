@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: size
+
+size: size.cpp
+	$(CC) $(CFLAGS) -o size size.cpp
+
+clean:
+	rm size

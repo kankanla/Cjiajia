@@ -1,0 +1,22 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: float1.exe
+
+float1.exe: float1.cpp
+	@echo "This program will generate a warning when compiled"
+	$(CC) $(CFLAGS)  float1.cpp
+
+clean:
+	erase float1.exe

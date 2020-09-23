@@ -1,0 +1,4 @@
+M square.cpp
+D /home/sdo/writing/book/cpp.new/book/examples/disk/template
+A '-Wall' '-frepo' '-DGCC' '-c'
+C _Z6squareI7integerET_S1_

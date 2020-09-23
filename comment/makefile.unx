@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: comment
+
+comment: comment.cpp
+	@echo "This program will not compile due to an error"
+	-$(CC) $(CFLAGS) -o comment comment.cpp
+
+clean:
+	rm comment

@@ -1,0 +1,24 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: io.out io.exe
+
+io.out: io.exe
+	io >io.out
+
+io.exe: io.cpp
+	$(CC) $(CFLAGS)  io.cpp
+
+clean:
+	erase io.exe 

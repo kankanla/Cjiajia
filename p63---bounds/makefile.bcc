@@ -1,0 +1,26 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+
+all: bound_err.exe bound_c1.exe bound_c2.exe
+
+bound_err.exe: bound_err.cpp
+	$(CC) $(CFLAGS) -ebound_err bound_err.cpp
+
+bound_c1.exe: bound_c1.cpp
+	$(CC) $(CFLAGS) -ebound_c1 bound_c1.cpp
+
+bound_c2.exe: bound_c2.cpp
+	$(CC) $(CFLAGS) -ebound_c2 bound_c2.cpp
+
+clean:
+	erase bound_err.exe bound_c1.exe bound_c2.exe

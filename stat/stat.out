@@ -1,0 +1,46 @@
+   1 ( 0 { 0 #include <iostream>
+   2 ( 0 { 0 
+   3 ( 0 { 0 int   result;    // the result of the calculations 
+   4 ( 0 { 0 char  oper_char; // operator the user specified 
+   5 ( 0 { 0 int   value;     // value specified after the operator 
+   6 ( 0 { 0 
+   7 ( 0 { 0 int main()
+   8 ( 0 { 1 {
+   9 ( 0 { 1     result = 0; // initialize the result 
+  10 ( 0 { 1 
+  11 ( 0 { 1     // loop forever (or until break reached)
+  12 ( 0 { 2     while (true) {
+  13 ( 0 { 2 	std::cout << "Result: " << result << '\n';
+  14 ( 0 { 2 	std::cout << "Enter operator and number: ";
+  15 ( 0 { 2 
+  16 ( 0 { 2 	std::cin >> oper_char >> value;
+  17 ( 0 { 2 
+  18 ( 0 { 2         if ((oper_char == 'q') || (oper_char == 'Q'))
+  19 ( 0 { 2             break;
+  20 ( 0 { 2 
+  21 ( 0 { 3         if (oper_char == '+') {
+  22 ( 0 { 3             result += value;
+  23 ( 0 { 3         } else if (oper_char == '-') {
+  24 ( 0 { 3             result -= value;
+  25 ( 0 { 3         } else if (oper_char == '*') {
+  26 ( 0 { 3             result *= value;
+  27 ( 0 { 3         } else if (oper_char == '/') {
+  28 ( 0 { 4             if (value == 0) {
+  29 ( 0 { 4 		std::cout << "Error:Divide by zero\n";
+  30 ( 0 { 4 		std::cout << "   operation ignored\n";
+  31 ( 0 { 3             } else
+  32 ( 0 { 3                 result /= value;
+  33 ( 0 { 3         } else {
+  34 ( 0 { 3 	    std::cout << "Unknown operator " << oper_char << '\n';
+  35 ( 0 { 2         }
+  36 ( 0 { 1     }
+  37 ( 0 { 1     return (0);
+  38 ( 0 { 0 }
+Total number of lines: 38
+Maximum nesting of () : 2
+Maximum nesting of {} : 4
+Number of blank lines .................6
+Number of comment only lines ..........1
+Number of code only lines .............27
+Number of lines with code and comments 4
+Comment to code ratio 16.1%

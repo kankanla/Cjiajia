@@ -1,0 +1,20 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+doit_t.exe: doit_t.cpp
+	@echo "This compile generates an error"
+	-$(CC) $(CFLAGS)  doit_t.cpp
+
+clean:
+	erase doit_t.exe

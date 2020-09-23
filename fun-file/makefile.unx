@@ -1,0 +1,12 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+C_COMPILE=cc
+CFLAGS=-g
+
+fun-file: fun-file.cpp
+	$(C_COMPILE) $(CFLAGS) -o fun-file fun-file.cpp
+
+clean:
+	rm fun-file

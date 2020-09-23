@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: balance
+
+balance: balance.cpp
+	@echo "The following compile may generate a warning"
+	$(CC) $(CFLAGS) -o balance balance.cpp
+
+clean:
+	rm balance

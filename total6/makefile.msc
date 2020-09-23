@@ -1,0 +1,24 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: total6.exe total6w.exe
+
+total6.exe: total6.cpp
+	$(CC) $(CFLAGS)  total6.cpp
+
+total6w.exe: total6w.cpp
+	$(CC) $(CFLAGS)  total6w.cpp
+
+clean:
+	erase total6.exe total6w.exe

@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+read: read.cpp
+	$(CC) $(CFLAGS) -o read read.cpp
+
+clean:
+	rm read

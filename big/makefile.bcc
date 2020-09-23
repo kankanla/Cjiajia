@@ -1,0 +1,20 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: big.exe
+
+big.exe: big.cpp
+	@echo The following compile generates a syntax error
+	$(CC) $(CFLAGS) -ebig big.cpp
+
+clean:
+	erase big.exe

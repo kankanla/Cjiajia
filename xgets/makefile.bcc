@@ -1,0 +1,24 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: xgets.obj xgets2.obj
+
+xgets.obj: xgets.cpp
+	@echo "The following does not generate a full program"
+	$(CC) -c $(CFLAGS) xgets.cpp
+
+xgets2.obj: xgets2.cpp
+	@echo "The following does not generate a full program"
+	$(CC) -c $(CFLAGS) xgets2.cpp
+
+clean:
+	erase xgets.obj xgets2.obj

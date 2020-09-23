@@ -1,0 +1,29 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: max.exe stack_c1.exe
+
+max.exe: max.cpp
+	@echo "This fails, but it shouldn't"
+	$(CC) $(CFLAGS) -emax max.cpp
+
+stack_c1.exe: stack_c1.cpp
+	$(CC) $(CFLAGS) -estack_c1 stack_c1.cpp
+
+words.exe: words.cpp
+	$(CC) -v $(CFLAGS) -ewords words.cpp
+
+words.cpp: words.cpp
+	$(CC) -E $(CFLAGS) words.cpp>words.cpp
+
+clean:
+	erase max.exe stack_c1.exe

@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+sine: sine.cpp
+	$(CC) $(CFLAGS) -o sine sine.cpp -lm
+
+clean:
+	rm sine

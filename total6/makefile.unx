@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: total6 total6w
+
+total6: total6.cpp
+	$(CC) $(CFLAGS) -o total6 total6.cpp
+
+total6w: total6w.cpp
+	$(CC) $(CFLAGS) -o total6w total6w.cpp
+
+clean:
+	rm total6 total6w

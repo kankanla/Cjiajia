@@ -1,0 +1,24 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: seven.exe count.exe
+
+count.exe: count.cpp
+	$(CC) $(CFLAGS)  count.cpp
+
+seven.exe: seven.cpp
+	$(CC) $(CFLAGS)  seven.cpp
+
+clean:
+	erase seven.exe count.exe

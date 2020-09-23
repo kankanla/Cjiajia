@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: big
+
+big: big.cpp
+	@echo The following compile generates a syntax error
+	$(CC) $(CFLAGS) -o big big.cpp
+
+clean:
+	rm big

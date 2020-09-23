@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: float1
+
+float1: float1.cpp
+	@echo "This program will generate a warning when compiled"
+	$(CC) $(CFLAGS) -o float1 float1.cpp
+
+clean:
+	rm float1

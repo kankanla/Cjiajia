@@ -1,0 +1,17 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+C_COMPILE=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+float3.exe: float3.cpp
+	$(C_COMPILE) $(CFLAGS) -efloat3 float3.cpp
+
+clean:
+	erase float3.exe

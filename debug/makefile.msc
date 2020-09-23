@@ -1,0 +1,28 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: flush.exe cstop.obj flush2.exe
+
+flush.exe: flush.cpp
+	$(CC) $(CFLAGS)  flush.cpp
+
+flush2.exe: flush2.cpp
+	$(CC) $(CFLAGS)  flush2.cpp
+
+cstop.obj: cstop.cpp
+	@echo "Generates object file only"
+	$(CC) $(CFLAGS) -c cstop.cpp
+
+clean:
+	erase flush.exe cstop.obj flush2.exe

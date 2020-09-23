@@ -1,0 +1,34 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+all: search0.exe search1.exe search2.exe search3.exe search4.exe
+
+search0.exe: search0.cpp
+	$(CC) $(CFLAGS)  search0.cpp
+
+search1.exe: search1.cpp
+	$(CC) $(CFLAGS)  search1.cpp
+
+search2.exe: search2.cpp
+	$(CC) $(CFLAGS)  search2.cpp
+
+search3.exe: search3.cpp
+	$(CC) $(CFLAGS)  search3.cpp
+
+search4.exe: search4.cpp
+	$(CC) $(CFLAGS)  search4.cpp
+
+
+clean:
+	erase search0.exe search1.exe search2.exe search3.exe search4.exe

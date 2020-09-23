@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: array-p
+
+array-p: array-p.cpp
+	$(CC) $(CFLAGS) -o array-p array-p.cpp
+
+clean:
+	rm array-p

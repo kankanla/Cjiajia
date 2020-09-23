@@ -1,0 +1,22 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc32
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-tWC -- Console application
+#
+CFLAGS=-N -v -w -tWC
+all: io.out io.exe
+
+io.out: io.exe
+	io >io.out
+
+io.exe: io.cpp
+	$(CC) $(CFLAGS) -eio io.cpp
+
+clean:
+	erase io.exe 

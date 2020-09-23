@@ -1,0 +1,27 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	GZ -- Enable stack checking
+#	RTCsuc -- Enable all runtime checks
+#	Zi -- Enable debugging
+#	Wall -- Turn on warnings (Omitted)
+#	EHsc -- Turn exceptions on
+
+#
+CFLAGS=/GZ /RTCsuc /Zi /EHsc 
+
+all: fixed_test
+
+fixed_test: fixed_pt.obj fixed_test.obj
+
+fixed_test.obj: fixed_test.cpp fixed_pt.h
+	$(CC) $(CFLAGS) -c fixed_test.cpp
+
+fixed_pt.obj: fixed_pt.cpp fixed_pt.h
+	$(CC) $(CFLAGS) -c fixed_pt.cpp
+
+clean:
+	erase *.obj fixed_test
