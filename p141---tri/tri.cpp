@@ -1,10 +1,10 @@
 #include <iostream>
 #include <assert.h>
 
-int main() 
+int main()
 {
-    // function to compute area of triangle 
-    float triangle(float width, float height);   
+    // function to compute area of triangle
+    float triangle(float width, float height);
 
     std::cout << "Triangle #1 " << triangle(1.3, 8.3) << '\n';
     std::cout << "Triangle #2 " << triangle(4.8, 9.8) << '\n';
@@ -23,7 +23,7 @@ int main()
  *******************************************/
 float triangle(float width, float height)
 {
-    float area; // area of the triangle 
+    float area; // area of the triangle
 
     assert(width >= 0.0);
     assert(height >= 0.0);
